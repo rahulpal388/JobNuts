@@ -15,7 +15,7 @@ export function NavBar() {
     const varient = {
         draw: {
             opacity: 0.8,
-            scale: 1.1
+
         }
     }
     const childVarient = {
@@ -47,7 +47,8 @@ export function NavBar() {
                 }}
 
 
-                className="flex justify-between items-center py-4  ">
+                className="flex justify-between items-center py-4 fixed top-0 left-0 w-full px-20 bg-blue-50
+                z-50   ">
                 {/* logo */}
                 <div className="max-md:hidden">
                     <h1 className="lg:text-3xl text-xl font-light italic tracking-wider ">JobNuts</h1>

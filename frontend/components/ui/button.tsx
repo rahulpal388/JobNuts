@@ -8,7 +8,7 @@ const btnColor: {
     Secondary: string,
     Action: string
 } = {
-    Default: "  rounded outline-none text-white  hover:opacity-80  cursor-pointer",
+    Default: "  rounded outline-none text-white   hover:opacity-80  cursor-pointer flex gap-2 justify-center items-center  ",
     Primary: " px-4 py-2 bg-[#27187E] ",
     Secondary: " px-4 py-2 bg-[#27187E]",
     Action: " px-3 py-2 bg-[#27187E] itmes-center "
@@ -17,14 +17,15 @@ const btnColor: {
 
 
 
-export function Button({ name, type, onClick }: {
+export function Button({ name, type, onClick, children }: {
     name: String,
     type: "Primary" | "Secondary" | "Action",
-    onClick: () => void
+    onClick: () => void,
+    children?: React.ReactNode
 }) {
     return (
         <>
-            <button className={`${btnColor[type]} ${btnColor.Default}  `} onClick={onClick}>{name}</button>
+            <button className={`${btnColor[type]} ${btnColor.Default}  `} onClick={onClick}>{name}{children}</button>
         </>
     )
 }

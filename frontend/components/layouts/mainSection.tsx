@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 export function MainSection() {
     return (
         <>
-            <div className="flex gap-4 justify-between items-center mt-12 ">
+            <div className="flex gap-4 justify-between items-center mt-36 ">
                 <div className="px-12 flex flex-col items-center w-[40rem]">
                     <motion.h1
 
