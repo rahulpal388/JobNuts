@@ -9,12 +9,6 @@ export const serviceCard: IServiceCard[] = [
     },
     {
         // icon: <ArrowRight/>,
-        title: "Plumber",
-        description: "Expert plumbing services for leaks, clogs, and bathroom fittings — fast and reliable.",
-        href: "/service/plumber"
-    },
-    {
-        // icon: <ArrowRight/>,
         title: "Ac Repair",
         description: "Quick and affordable air conditioner servicing, gas refilling, and repairs by certified technicians.",
         href: "/service/ac-repair"

@@ -17,15 +17,16 @@ const btnColor: {
 
 
 
-export function Button({ name, type, onClick, children }: {
+export function Button({ name, type, onClick, children, className }: {
     name: String,
     type: "Primary" | "Secondary" | "Action",
     onClick: () => void,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    className?: string
 }) {
     return (
         <>
-            <button className={`${btnColor[type]} ${btnColor.Default}  `} onClick={onClick}>{name}{children}</button>
+            <button className={`${btnColor[type]} ${btnColor.Default} ${className} `} onClick={onClick}>{name}{children}</button>
         </>
     )
 }

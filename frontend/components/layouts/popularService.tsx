@@ -3,6 +3,8 @@ import { useScroll, useTransform, motion, useMotionTemplate } from "motion/react
 import { serviceCard } from "../../constant/serviceCard.constant";
 import { ServiceCard } from "../ui/serviceCard";
 import { useRef } from "react";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 
 
 
@@ -20,7 +22,7 @@ export function PopularSerrvice() {
         <>
             <div
 
-                className="pb-20" ref={ref} >
+                className=" flex flex-col gap-12 items-center " ref={ref} >
                 <div>
                     <motion.h1
                         initial={{
@@ -34,10 +36,13 @@ export function PopularSerrvice() {
                         className="text-4xl font-bold text-blue-950 text-center  ">Popular Service</motion.h1>
 
                 </div>
-                <div className="mt-12  flex gap-6 flex-wrap justify-center items-center">
+                <div className="  flex gap-6 flex-wrap justify-center items-center">
                     {serviceCard.map((item, i) => (
                         <ServiceCard key={i} title={item.title} description={item.description} href={item.href} />
                     ))}
+                </div>
+                <div className="">
+                    <Button type="Action" name="Explore More" onClick={() => { console.log("explore more") }} children={<ArrowRight className=" stroke-[1.5px]  " />} />
                 </div>
             </div>
         </>

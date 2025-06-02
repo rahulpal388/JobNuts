@@ -33,7 +33,7 @@ export function ServiceCard({ title, description, href }: IServiceCard) {
                     ease: "easeInOut"
                 }}
 
-                className="container border border-black p-4 rounded-xl max-w-72  cursor-pointer shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                className="container border bg-white border-black p-4 rounded-xl max-w-72  cursor-pointer shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
                 <div >
                     <img src="/electricianIcon.svg" alt="icon" className=" size-16 " />
                     <h1 className="text-2xl font-bold text-blue-950 ">{title}</h1>
@@ -53,7 +53,7 @@ export function ServiceCard({ title, description, href }: IServiceCard) {
                     </div>
                 </div>
                 <div className="mt-4 flex justify-center">
-                    <Button type="Action" name="Explore" children={<ArrowRight className=" stroke-[1.5px]  " />} onClick={() => { router.push(href) }} />
+                    <Button type="Action" name="Book Now" onClick={() => { router.push(href) }} />
                 </div>
             </motion.div>
         </>

@@ -4,14 +4,16 @@ import { Button } from "../ui/button"
 import { useState } from "react"
 import { SideBar } from "./sideBar"
 import { motion, scale } from "motion/react"
+import { useRouter } from "next/navigation"
 
-export const navItmes = [{ name: "Home" }, { name: "Service" }, { name: "How Its Work" }, { name: "About" }]
+export const navItems = [{ name: "Home" }, { name: "Service" }, { name: "How Its Work" }, { name: "About" }]
 
 
 
 
 export function NavBar() {
     const [isSideBarOpen, setSideBarOpen] = useState<boolean>(false);
+    const router = useRouter()
     const varient = {
         draw: {
             opacity: 0.8,
@@ -47,21 +49,23 @@ export function NavBar() {
                 }}
 
 
-                className="flex justify-between items-center py-4 fixed top-0 left-0 w-full px-20 bg-blue-50
+                className="flex justify-between items-center py-4 shadow  fixed insert-0 w-full   px-12 bg-white
                 z-50   ">
                 {/* logo */}
-                <div className="max-md:hidden">
+                <div className="max-lg:hidden">
                     <h1 className="lg:text-3xl text-xl font-light italic tracking-wider ">JobNuts</h1>
                 </div>
 
-                <div className="hidden max-md:block  ">
-                    <AlignLeft className="cursor-pointer size-8 " onClick={() => { setSideBarOpen(prev => !prev) }} />
+                <div className="hidden max-lg:block">
+                    <div className="  ">
+                        <AlignLeft className="cursor-pointer size-8 " onClick={() => { setSideBarOpen(prev => !prev) }} />
+                    </div>
+                    <SideBar setSideBarOpen={setSideBarOpen} isSideBarOpen={isSideBarOpen} />
                 </div>
-                <SideBar setSideBarOpen={setSideBarOpen} isSideBarOpen={isSideBarOpen} />
                 {/* navigation items */}
-                <div className="flex gap-6 items-center max-md:hidden ">
+                <div className="flex gap-6 items-center max-lg:hidden ">
                     {
-                        navItmes.map((item, i) => (
+                        navItems.map((item, i) => (
                             <motion.div
 
                                 whileHover={"draw"}
@@ -71,7 +75,7 @@ export function NavBar() {
                                 }}
 
                                 key={i} className="cursor-pointer p-2">
-                                <h4 className="text-lg " >{item.name}</h4>
+                                <h4 className="xl:text-lg " >{item.name}</h4>
                                 <motion.div
                                     initial={{
                                         width: 0
@@ -86,7 +90,7 @@ export function NavBar() {
                 {/* action items */}
                 <div className="flex gap-6 items-center max-sm:hidden ">
                     <a href="#">Customer Login</a>
-                    <Button type="Action" onClick={() => { console.log("primary") }} name="Sign in" />
+                    <Button type="Action" onClick={() => { router.push("/auth/signin") }} name="Sign in" />
                 </div>
             </motion.div >
         </>
